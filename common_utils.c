@@ -29,6 +29,8 @@
 #include <stdlib.h>
 
 int log_it(char* logthis, char*logpath) {
+	//TODO: check for buffer overflow
+	
 	char write_buffer[4096] = { 0 };
 	char time_stamp[32] = {0};
 	char i_temp = 0;
@@ -42,11 +44,11 @@ int log_it(char* logthis, char*logpath) {
 	
 	//printf("%s: %s\n", time_stamp, logthis);
 	FILE *fp = fopen(logpath, "ab+");
-	if (i_temp(fprintf(fp, "%s: %s\n", time_stamp, logthis)) < 0 ) {
-		return i_temp = -1;
-		}
+	if (fp < 1) {
+		printf("file IO error: %s", logpath);
+		i_temp = -1;
+		return i_temp;
+		}	
+	
 	return i_temp;
 	}
-
-
-
