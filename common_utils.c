@@ -31,6 +31,7 @@
 int log_it(char* logthis, char*logpath) {
 	char write_buffer[4096] = { 0 };
 	char time_stamp[32] = {0};
+	char i_temp;
 	struct tm *time_information;
 	time_t timer;
 	
@@ -41,7 +42,9 @@ int log_it(char* logthis, char*logpath) {
 	
 	//printf("%s: %s\n", time_stamp, logthis);
 	FILE *fp = fopen(logpath, "ab+");
-	fprintf(fp, "%s: %s\n", time_stamp, logthis);
+	if (i_temp(fprintf(fp, "%s: %s\n", time_stamp, logthis)) < 0 ) {
+		return i_temp = -1;
+		}
 	}
 
 
