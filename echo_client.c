@@ -3,7 +3,6 @@
  * Contact: charlesexumdev@gmail.com
  * */
 
-/* delete this comment :D */
 #include <stdio.h> 
 #include <string.h>    
 #include <sys/socket.h>    
