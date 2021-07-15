@@ -2,7 +2,7 @@
  * Date: 2018.08.08
  * Contact: charlesexumdev@gmail.com
  * */
- 
+/* this is a comment, delete it */ 
 #include <stdio.h> 
 #include <string.h>    
 #include <sys/socket.h>    
