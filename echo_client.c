@@ -8,7 +8,6 @@
 #include <sys/socket.h>    
 #include <arpa/inet.h> 
 #include <unistd.h>
-
 const unsigned short int BUFFER_SIZE = 2048; // TODO: make this a macro
 unsigned short int REMAIN_CONNECTED = 1;
 //socket 
