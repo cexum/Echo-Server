@@ -1,0 +1,2478 @@
+/*
+ This file name is automatically updated by a script. Please don't edit this file's name.
+ The general philosophy is documented here: 128.192.9.183/eln/glycamweb/2016/04/21/website-rules/
+*/
+
+/* Dan Wentworth */
+@media only screen{
+
+  /*
+    :root is a selector for the document itself. Similar to the <html> element,
+        but more specific, so it will override elements that select html.
+  */
+  :root{
+    /*
+      Color scheme variables,
+        for drying out color edits.
+      If you would like to add colors, it might be helpful to use this
+      color scheme tool, wich has color blindness tests:
+      http://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF <---- For those that know color theory.
+      https://coolors.co/ <---- For those who are color blind.
+
+      Best practice would be to use a color value we already use as a base color,
+      and let the color scheme tool generate hues that work with our existing
+      scheme. Ask Dan if you would like guidance. Otherwise have fun.
+    */
+    --not-quite-white: #fdfdfc;
+    --lightest-grey: #eee;
+    --light-grey: #b9bdc4;
+    --shadow-grey: #888;
+    --grey: #8f9193;
+    --dark-grey: #444;
+
+    --blue-grey-dim: #9DA3AF;
+
+    --light-blue-grey: #bbc2cf;
+    --mid-blue-grey: #647594;
+    --blue-grey: #8d98ae;
+    --pale-light-blue: #e3e5ea;
+    --highlight-blue: #e6e8ec;
+    --mid-blue: #667594;
+    --dark-blue: #2A3F66;
+    --slate-blue: #0c2836;
+
+
+    --light-green: #75a587;
+
+    --orange-dim: #E3AA5C;/*E3AA5C*/
+    --orange-warn: #C9641C;/*ED9C30*/
+
+    --red-dim: #B05D63;
+
+    --light-red: #ffd4c8;
+    --mid-red: #95343b;
+    --mauve: #b55960;
+    --gentle-red: #b12c36;
+  }
+
+.bg-orange-dim{
+  background-color: var(--orange-dim) !important;
+}
+.bg-orange{
+  background-color: var(--orange-warn) !important;
+}
+
+.bg-red-dim{
+  background-color: var(--red-dim) !important;
+}
+.bg-red{
+  background-color: var(--gentle-red) !important;
+}
+
+.bg-blue-dim{
+  background-color: var(--blue-grey-dim) !important;
+}
+.bg-blue-grey{
+  background-color: var(--mid-blue-grey) !important;
+}
+
+.active-link {
+  border: 1px solid var(--slate-blue);
+  border-radius: 30px;
+  height: 80% !important;
+  width: 40% !important;
+  background-color: var(--light-grey);
+  font-weight: bolder;
+  color: var(--slate-blue);
+  box-shadow: 0 0 17px var(--light-green);
+
+  animation: pulsate 1s ease-out infinite;
+}
+
+@-webkit-keyframes pulsate {
+    0%   { box-shadow: 0 0 0 var(--slate-blue); }
+    50%  { box-shadow: 0 0 17px var(--mid-blue); }
+    100% { box-shadow: 0 0 0 var(--mid-blue-grey); }
+}
+
+
+*{
+  text-rendering: optimizeLegibility;
+}
+
+body{
+  padding:0;
+  margin:0;
+  width:100%;
+}
+
+table {
+  border: 2px solid var(--grey);
+  background-color: var(--lightest-grey);
+  width: 100%;
+}
+
+
+th {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bolder;
+  border: 1px solid black;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 1%;
+  border:1px solid var(--light-grey);
+  background-color: white;
+
+}
+
+#cake{
+  width:70vw;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+
+.text-white{
+  color:white !important;
+}
+
+
+.font-6{
+  font-size: 0.6em !important;
+}
+.font-7{
+  font-size: 0.7em !important;
+}
+.font-8{
+  font-size: 0.8em !important;
+}
+.font-9{
+  font-size: 0.9em !important;
+}
+.font-std{
+  font-size:1em !important;
+}
+.font-11{
+  font-size: 1.1em !important;
+}
+.font-12{
+  font-size: 1.2em !important;
+}
+.font-13{
+  font-size: 1.3em !important;
+}
+.font-14{
+  font-size: 1.4em !important;
+}
+.font-15{
+  font-size: 1.5em !important;
+}
+
+
+/* Maybe deprecate these. */
+.font-size-half{
+  font-size:0.5em !important;
+}
+
+.font-size-small{
+  font-size:0.75em !important;
+}
+
+.font-size-mid{
+  font-size:0.90em !important;
+}
+
+.font-size-std{
+  font-size:1em !important;
+}
+
+.font-size-large{
+  font-size:1.5em !important;
+}
+.font-size-double{
+  font-size:2em !important;
+}
+
+.body-height{
+  height:100vh;
+}
+
+.table-height{
+  height: 75vh;
+}
+
+.form-group{
+  border:1px solid red;
+  background-color:var(--lightest-grey);
+  border:1px solid var(--light-grey);
+  border-radius:4px;
+  padding:4%;
+}
+
+/*Labels for forms are made bold.*/
+.control-label{
+  font-weight:bolder;
+}
+
+.clearablefileinput{
+
+  padding:1%;
+}
+
+
+.tab {
+  overflow: hidden;
+  background-color: var(--light-grey);
+}
+
+.tab button:hover{
+  background-color: var(--light-green);
+}
+
+.tab button.active{
+  background-color: var(--slate-blue);
+  color:white;
+}
+
+.tabcontent{
+  display:none;
+}
+
+.nav-pills{
+
+  border-radius:4px;
+  padding:0% !important;
+  font-weight:bolder;
+}
+
+#spike-protein-video{
+    width:60vw;
+    height:60vw;
+}
+
+
+.pill-label{
+  color: white !important;
+  padding:0;
+  margin:0;
+}
+.pill-label:hover{
+  color:var(--slate-blue) !important;
+  font-style:italic;
+}
+
+.status-img{
+  width:1.5vw;
+  height:auto;
+}
+
+// Ellipsis animation
+.loading {
+  color:var(--mid-blue);
+}
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+  animation: ellipsis steps(4,end) 900ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+// End Ellipsis animation
+
+
+/*.loader {
+  border: 8px solid var(--not-quite-white);
+  border-top: 8px solid var(--mid-blue);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+.loader-small {
+  border: 4px solid var(--not-quite-white);
+  border-top: 4px solid var(--mid-blue);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 2s linear infinite;
+  display:inline-flex;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}*/
+
+.sidebar-container{
+  display:none;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.rotamer-col{
+  min-width: 60px;
+  min-height: 30px;
+}
+
+.angle-col{
+  min-width: 80px;
+  width: 100px;
+  max-width: 100px;
+}
+
+.table-pill{
+  padding:0;
+  border:1px solid var(--lightest-grey);
+}
+
+.deselcted-pill{
+  background-color:var(--light-grey) !important;
+}
+
+.nav-link.active{
+  background-color:var(--mid-blue-grey) !important;
+
+}
+
+.nav-link{
+  background-color:var(--light-blue-grey) !important;
+  margin-bottom:2%;
+}
+
+.tables-display{
+  background-color:white;
+
+}
+
+#id_title{
+    width:100%;
+    color:grey;
+    border-radius:6px;
+}
+
+
+#id_email{
+    width:100%;
+    color:grey;
+    border-radius:6px;
+}
+
+#id_comment{
+    width:100%;
+    color:grey;
+    border-radius:6px;
+}
+
+
+
+.pdb-options-table.active{
+  position:absolute;
+  top:0px;
+  z-index:10;
+  background-color:white;
+
+}
+
+.pdb-options-table.fade{
+  z-index:-1;
+}
+
+
+.table-container{
+  margin:0 !important;
+  padding:0 !important;
+  text-align:center;
+  border: 1px solid var(--light-grey);
+  max-width:3000px !important;
+
+}
+
+/* the collection of all table headers */
+.table-headers{
+  background-color: var(--blue-grey);
+  position:sticky;
+  top:0;
+  z-index:5;
+}
+
+
+.table-header-row{
+  width: 100%;
+  padding:0 !important;
+  margin:0 !important;
+  color: white;
+  font-weight:bolder;
+
+}
+
+/* An individual header label */
+.table-header{
+  text-align: center !important;
+  vertical-align: middle !important;
+  margin-bottom:0;
+}
+
+#ter-headers-bottom{
+  height:8%;
+}
+
+.table-row-odd{
+  width:100%;
+  padding:0 !important;
+  margin:0 !important;
+
+}
+
+.table-row-even{
+  width:100%;
+  padding:0 !important;
+  margin:0 !important;
+  background-color:var(--lightest-grey);
+}
+
+.table-col{
+  border-left:1px solid var(--not-quite-white);
+}
+
+.hyd-col{
+  width:14.28% !important;
+}
+
+
+.filled-cell{
+  background-color: var(--pale-light-blue);
+}
+
+/*
+  For links with dark background colors.
+*/
+.light-link{
+  color:white !important;
+}
+
+.scrollable{
+  overflow: auto;
+}
+
+/*
+  Generic rules - useful for most types of elements,
+  typically used as modifiers.
+*/
+
+  /*
+    Centers text only. If you need to center something like a container,
+    consider using columns or margins.
+  */
+  .centered{
+    text-align: center !important;
+  }
+
+  .centered-img{
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+  }
+
+  /*
+    No space around the element's border
+  */
+  .no-margin{
+    margin:0!important;
+  }
+
+  /*
+    No word wrap
+  */
+  .no-wrap{
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  /*
+    Simple hide rule.
+  */
+  .hidden-element{
+    display: none !important;
+  }
+
+  /*
+    Aligns text only.
+  */
+  .align-left{
+    text-align: left !important;
+  }
+
+  /*
+    Aligns text only.
+  */
+  .align-right{
+    text-align: right !important;
+  }
+
+  .float-right{
+    float:right;
+  }
+
+  .float-left{
+    float:left;
+  }
+
+  .inline{
+    display:inline;
+  }
+  /*
+    Applies to paragraph-style divs etc...
+  */
+  .text-indent{
+    text-indent:10px;
+  }
+
+  /*
+    Applies to anything. Creates a subtle offset.
+  */
+  .indented{
+    margin-left: 2%;
+  }
+
+  /*
+    Applies to anything. Creates a larger offset than .indented.
+  */
+  .indented-large{
+    margin-left: 10%;
+  }
+
+  /*
+    really useful for temporarily isolating an element.
+    usually temporary - meant for development.
+    i.e. trying to see margins/padding
+  */
+  .highlighted-border{
+    border: 1px solid red;
+  }
+
+  /*
+    Hides stuff.
+  */
+  .hidden-element{
+    display: none;
+  }
+
+  /*
+    Gives a standard border color with rounded corners.
+  */
+  .rounded-border{
+    border: 1px solid var(--blue-grey) !important;
+    border-radius: 4px !important;
+  }
+
+  /*
+    Subtle padding, equal on all sides.
+  */
+  .small-pad{
+    padding:0.5% !important;
+  }
+
+  .med-small-pad{
+    padding: 2% !important;
+  }
+
+  .padded{
+    padding: 5%;
+  }
+
+  .small-margin{
+    margin: 0.5%;
+  }
+
+  .top-margin{
+    margin-top:2%;
+  }
+
+  .right-side-margin{
+    margin-right:5px;
+  }
+
+  .bottom-margin-small{
+    margin:2% !important;
+  }
+
+  .bottom-border{
+    border-bottom:1px solid var(--blue-grey);
+  }
+
+  .full-width{
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width:100% !important;
+    width: 100% !important;
+  }
+
+
+  /*
+    Static padding, just on top.
+  */
+  .vertical-pad{
+    height: 20px;
+  }
+
+  /*
+    Set width to one third of parent
+  */
+  .width-1-3{
+    width:33%;
+  }
+
+  /*
+    Set width to one half of parent
+  */
+  .width-1-2{
+    width:50%;
+  }
+
+  /*
+    Color overrides for Bootstrap links and buttons.
+  */
+  li>a.a-disabled{
+    color: var(--mid-blue-grey) !important;
+  }
+  li>a.a-disabled:hover{
+    color: var(--mid-blue-grey) !important;
+  }
+  .disabled-link{
+      color: var(--mid-blue-grey) !important;
+  }
+  .disabled-link:hover{
+      color: var(--mid-blue-grey) !important;
+  }
+  .dropdown-menu>li>a.a-disabled{
+    color: var(--light-grey) !important;
+  }
+  .dropdown-menu>li>a:hover {
+    color:var(--slate-blue) !important;
+  }
+
+
+  .bg-dark{
+    background-color: var(--dark-grey) !important;
+  }
+  .bg-light{
+    background-color: var(--light-blue-grey) !important;
+  }
+
+  .btn-dark{
+    color: white;
+    background-color: var(--dark-grey) !important;
+    border-style: none;
+  }
+
+  .btn.active{
+    width: 100%;
+    padding-top:2% !important;
+    padding-bottom:2% !important;
+    font-weight:bolder;
+  }
+
+  .btn-blue.deselected{
+    background-color: var(--blue-grey-dim) !important;
+  }
+
+  .btn-blue.inactive{
+    background-color: var(--blue-grey-dim) !important;
+    width:97%;
+    margin-right:2%
+  }
+
+  .btn-blue{
+    border-top: 1px solid var(--not-quite-white) !important;
+    border-left: 1px solid var(--not-quite-white) !important;
+    border-bottom: 2px solid var(--slate-blue) !important;
+    border-right: 2px solid var(--slate-blue) !important;
+    background-color: var(--mid-blue-grey) !important;
+    border-radius: 10px;
+    color: white !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .btn-red.inactive{
+    background-color: var(--red-dim) !important;
+    width:97%;
+    margin-right:2%;
+  }
+
+  .btn-red{
+    border-top: 1px solid var(--not-quite-white) !important;
+    border-left: 1px solid var(--not-quite-white) !important;
+    border-bottom: 2px solid var(--slate-blue) !important;
+    border-right: 2px solid var(--slate-blue) !important;
+    background-color: var(--gentle-red) !important;
+    border-radius: 10px;
+    color: white !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .btn-orange.inactive{
+    background-color: var(--orange-dim) !important;
+    width:97%;
+    margin-right:2%;
+  }
+  .btn-orange{
+    border-top: 1px solid var(--not-quite-white) !important;
+    border-left: 1px solid var(--not-quite-white) !important;
+    border-bottom: 2px solid var(--slate-blue) !important;
+    border-right: 2px solid var(--slate-blue) !important;
+    background-color: var(--orange-warn) !important;
+    border-radius: 10px;
+    color: white !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+  .btn-dark:focus{
+    color: var(--pale-light-blue) !important;
+  }
+  .btn-dark:hover{
+    color:var(--light-blue-grey) !important;
+  }
+  .btn:disabled{
+    color:var(--shadow-grey) !important;
+  }
+  .btn-disabled{
+    background-color:var(--shadow-grey) !important;
+  }
+
+  .cb-visualize-btn{
+    border-top: 1px solid var(--not-quite-white) !important;
+    border-left: 1px solid var(--not-quite-white) !important;
+    border-bottom: 2px solid var(--slate-blue) !important;
+    border-right: 2px solid var(--slate-blue) !important;
+    background-color: var(--light-green) !important;
+    border-radius: 10px;
+    color: white !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+  .cb-visualize-btn.deselected{
+    border-top: 1px solid var(--not-quite-white) !important;
+    border-left: 1px solid var(--not-quite-white) !important;
+    border-bottom: 2px solid var(--slate-blue) !important;
+    border-right: 2px solid var(--slate-blue) !important;
+    background-color: var(--mid-blue-grey) !important;
+    border-radius: 10px;
+    color: white !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .lib-thumbnail:hover{
+    height: 52vw;
+    width:100%;
+    position:absolute;
+    z-index:1000;
+    background-color:var(--not-quite-white);
+    border:2px solid grey;
+  }
+  .lib-thumbnail{
+    height:50vw;
+    position:relative;
+  }
+
+  .functional-group-img{
+    display: block;
+    margin-top:0;
+    margin-left:2%;
+    max-width:20vw;
+    max-height:5vw;
+  }
+
+  .sequence-label{
+
+    overflow: auto;
+  }
+
+  .hotizontal-box{
+    display:inline;
+  }
+
+  /*
+    Default disabled checkboxes aren't obvious enough. This helps.
+  */
+  .checkbox-disabled{
+    color:var(--shadow-grey) !important;
+  }
+
+  /*
+    Standard indent for dropdown items.
+  */
+  .dropdown-item{
+    padding-left: 5%;
+  }
+
+/*
+  Containers
+*/
+
+  #id_comment{
+    max-height:50px;
+  }
+  /*
+    For creating containers with a standard width. Could also be useful in
+    nested circumstances. Start here if you want a container for a tool and
+    aren't sure where to start.
+  */
+  .margined-box{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+
+  .container-title{
+    float:left;
+  }
+
+  .horizontal-box{
+    display:inline;
+  }
+
+  /*
+    Smaller margins than margined-box, allowing for pages that need more width
+    for the content.
+  */
+  .margined-box-fat{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  /*
+    Used in DrawGlycan.
+  */
+  .sequence-text-area{
+    width: 100%;
+    margin-bottom:2%;
+    padding:0;
+  }
+
+  /*
+    cards.
+  */
+  .card-group{
+      background-color: var(--not-quite-white);
+      border: 1px solid var(--mid-blue-grey);
+      border-radius: 4px;
+      padding:1% 2% 2% 2%;
+  }
+
+
+  .card-blue{
+    background-color: var(--mid-blue-grey) !important;
+    color: white !important;
+    font-weight:bolder;
+  }
+
+  .card-orange{
+    background-color: var(--orange-warn) !important;
+    color: white !important;
+    font-weight:bolder;
+  }
+
+  .card-red{
+    background-color: var(--gentle-red) !important;
+    color: white !important;
+    font-weight:bolder;
+  }
+
+
+
+  /*
+    Content layout and color for a typical panel.
+    Examples in GF and Varmean
+  */
+  .card-body{
+    background-color: var(--not-quite-white);
+    color: var(--slate-blue);
+    margin: 0;
+    text-align: center;
+    padding-left: 5%;
+  }
+
+  /*
+    Header layout and color for a typical panel.
+  */
+  .card-header{
+    background-color: var(--lightest-grey);
+    border-bottom: 1px solid var(--light-grey);
+    padding-bottom: 2%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .card-title{
+    color:white;
+  }
+
+  .row-lg{
+    height:10%;
+  }
+
+  .scenario-card{
+    height:100%;
+    border:1px solid var(--mid-blue-grey) !important;
+    border-radius: 4px !important;
+  }
+
+  .scenario-card-heading{
+    color:white;
+
+  }
+
+
+
+  .scenario-heading:hover{
+    color: var(--light-blue-grey)
+  }
+
+
+
+
+  /*
+    Replacement for box-informational. Shorter name and
+    designed to play nicely with nested cards.
+  */
+  .info-box{
+    background-color: white !important;
+    color: var(--slate-blue);
+    border-color: var(--blue-grey);
+  }
+
+
+  /*
+    Standard droplist
+  */
+  .select_field{
+    border-radius: 4px;
+    width:80%;
+    margin-left: 2% !important;
+    padding: 1% 0% 1.5% 1%;
+    background-color: white;
+  }
+
+  /*
+    Page footer is designed to take up the least vertical space
+  */
+  .page-footer{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    color:var(--dark-grey);
+    background-color:var(--light-blue-grey);
+    text-align:center;
+    display: none;
+    z-index: 10;
+  }
+
+  /*
+    Just a centered div, really.
+  */
+  .downloads-box{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+  /*
+     Gives a green color to draw the eye to an important panel
+  */
+
+  .active-card{
+    background-color: var(--light-green) !important;
+    color: black;
+    box-shadow: 4px 4px 2px var(--dark-grey) !important;
+    border-bottom: 1px solid var(--slate-blue) !important;
+    border-right: 1px solid var(--slate-blue) !important;
+    border-left: 1px solid var(--pale-light-blue) !important;
+    border-top: 1px solid var(--pale-light-blue) !important;
+    border-radius: 4px;
+    margin-bottom: 1%;
+    display:flex;
+  }
+
+
+  /*
+    Makes a card look disabled.
+  */
+  .card-disabled{
+    background:var(--grey) !important;
+    color: var(--shadow-grey)  !important;
+    border-bottom: 1px solid var(--slate-blue) !important;
+    border-right: 1px solid var(--slate-blue)  !important;
+    border-left: 1px solid var(--pale-light-blue)  !important;
+    border-top: 1px solid var(--pale-light-blue)  !important;
+    margin-bottom: 1%;
+  }
+
+  .card-transparent{
+    background-color: var(--pale-light-blue);
+  }
+
+  .box-title{
+    background-color: white;
+    border:1px solid var(--light-grey);
+    border-radius: 4px;
+    text-align:center;
+  }
+
+  .error-card{
+    background-color:var(--light-red) !important;
+    font-weight:bolder;
+  }
+  /*
+    End generic rules
+  */
+
+
+/*
+  Navbar-related classes.
+*/
+  #master-nav{
+    z-index:1100;
+    min-height:40;
+    max-height:80 !important;
+  }
+
+  .sticky-offset-nav{
+    top:62px !important;
+  }
+
+  .navbar{
+    padding:0 2%;
+    margin-bottom:0.25%;
+    background-color:var(--light-blue-grey);
+    border-radius: 0;
+    border-bottom-color:var(--mid-blue-grey);
+    border-right-color:var(--mid-blue-grey);
+    border-top-color:var(--not-quite-white);
+    border-left-color:var(--not-quite-white);
+  }
+
+  /*
+    Limits the size of the logo.
+  */
+  .glycam-logo{
+    max-height: 30px;
+  }
+
+  /* Links that are contained in the navbar*/
+  .nav a{
+    color:var(--dark-grey);
+  }
+
+  .nav a:hover{
+    color: white !important;
+  }
+
+      /*
+        The login buttons. Basically bootstrap but with custom color
+          and margins.
+      */
+    .btn.btn-sm.btn-info{
+        margin-bottom: 4%;
+        background-color:var(--mid-blue-grey);
+        border-top-color:var(--highlight-blue);
+        border-left-color:var(--highlight-blue);
+        border-right-color:var(--mid-blue-grey);
+        border-bottom-color:var(--mid-blue-grey);
+        color:white !important;
+    }
+
+    a.btn.btn-blue{
+      color:white;
+    }
+
+    /*
+    Feedback button
+    */
+    #feedback-btn {
+      margin-bottom: 4%;
+      background-color:var(--light-green) !important;
+      border-top-color:var(--highlight-blue);
+      border-left-color:var(--highlight-blue);
+      border-right-color:var(--mid-blue-grey);
+      border-bottom-color:var(--mid-blue-grey);
+      color:white !important;
+    }
+
+    #loginDropdown{
+      margin-bottom: 4%;
+      background-color:var(--mid-blue-grey);
+      border-top-color:var(--highlight-blue);
+      border-left-color:var(--highlight-blue);
+      border-right-color:var(--mid-blue-grey);
+      border-bottom-color:var(--mid-blue-grey);
+      color:white !important;
+    }
+
+    #formLogin{
+      padding:7%;
+      background-color:var(--not-quite-white);
+    }
+
+
+
+/*
+  End Navbar rules
+*/
+
+/*
+  Step-related rules.
+*/
+
+  /*
+    Colors and alignment for the container around a step.
+  */
+  .steps-container{
+    background-color: var(--not-quite-white);
+    display:table-row;
+    height:100%;
+    width:100% !important;
+  }
+
+  .steps-row{
+    height:100%;
+    width:100%;
+  }
+
+  /*
+    General step alignment and color.
+  */
+  .step{
+    color: var(--mid-blue-grey);
+    display: none;
+    width:100% !important;
+    margin:auto;
+    text-align: center;
+  }
+
+  /*
+    The section that shows the app name. Note, this has rules that exist in the
+      step rule. They are meant to operate separately. Choose one header, the rest
+      are steps, one of which is also the active step.
+  */
+  .step-header{
+    font-weight:bolder;
+    color: var(--mid-blue-grey);
+    border-radius: 4px;
+    width:100% !important;
+    text-align: center;
+  }
+
+
+  /*
+    Makes a step look like the currently active step
+  */
+  .step-active{
+    background-color: var(--mid-blue-grey);
+    border-radius: 4px;
+    color: white;
+    display: inline-block;
+    width:100% !important;
+    height:100% !important;
+
+    padding-right:2%;
+    padding-left:2%;
+
+
+  }
+
+
+/*
+  End step rules
+
+*/
+
+/*
+  CB-specific rules
+*/
+  /*
+    Buttons designed to hold a symbol and a label.
+  */
+
+  .cb-bg{
+    background-color:var(--light-grey) !important;
+  }
+
+  .residue_button{
+    width:11vw;
+    height:5vw;
+    border-bottom: 1px solid var(--slate-blue) !important;
+    border-right: 1px solid var(--slate-blue) !important;
+    border-left: 1px solid var(--pale-light-blue) !important;
+    border-top: 1px solid var(--pale-light-blue) !important;
+    background-color: var(--mid-blue)  !important;
+    color: white !important;
+    vertical-align: middle !important;
+    padding-left:2px !important;
+    padding-right:2px !important;
+    border-radius:6px !important;
+  }
+
+
+  /*
+    At small screen sizes, button images should be hidden.
+  */
+  .button_img{
+    display:none;
+    max-height: 100px;
+  }
+
+  /*
+    Large font labels for residue buttons.
+  */
+
+  .residue-button-label{
+
+    display:inline-flex;
+
+  }
+
+
+  /*
+    This rule is a duplicate of residue_button. This is done for
+    javascript-logic selection reasons. Any attempt to remove this duplication needs
+    to test adding branches and derivatives heavily. Make sure you see
+    residue buttons becoming enabled after placing branches and derivatives.
+  */
+  .branch_option_button{
+    width:15vw;
+    height:6vw;
+    border-radius: 6px;
+    border-bottom: 1px solid var(--slate-blue);
+    border-right: 1px solid var(--slate-blue);
+    border-left: 1px solid var(--pale-light-blue);
+    border-top: 1px solid var(--pale-light-blue);
+    background-color: var(--mid-blue) !important;
+    color: white !important;
+  }
+
+  /*
+    CB buttons that are not residue buttons.
+  */
+  .editor_button{
+    width: 14vw;
+    height:8vw;
+
+    border-bottom: 1px solid var(--slate-blue) !important;
+    border-right: 1px solid var(--slate-blue) !important;
+    border-left: 1px solid var(--pale-light-blue) !important;
+    border-top: 1px solid var(--pale-light-blue) !important;
+    background-color:var(--not-quite-white)!important;
+    color:var(--dark-grey) !important;
+  }
+
+  .derivative-button{
+    width:40%;
+    background-color: var(--mid-blue) !important;
+    color: white !important;
+  }
+
+  /*
+    Helps the position checkboxes seem more obviously disabled.
+  */
+  .position-label-disabled{
+    color:var(--shadow-grey);
+  }
+
+  /*
+    Enabled position checkbox colors.
+  */
+  .position-checkbox{
+    color:black;
+  }
+  .position-label{
+    color:black;
+  }
+
+  .no-indent{
+    margin-left:0;
+    padding-left:0;
+  }
+
+
+  /*
+    For headers in the boxes to the right in the CB.
+  */
+  .node-box-title{
+    text-align:center !important;
+    margin:auto;
+
+  }
+
+  /*
+    Width for any text field in a node box.
+  */
+  .node-field{
+    width:100%;
+  }
+
+  .node-label{
+    white-space: nowrap;
+  }
+
+  /*
+    Good for buttons that occur in pairs.
+  */
+  .node-box-button{
+    margin-top:0;
+    width:47%;
+    height:3vw;
+    background-color:var(--mid-blue) !important;
+    padding:0px 4px !important;
+    color:white !important;
+  }
+
+  /*
+    Node box button group alignment.
+  */
+  .node-button-group{
+    text-align: center;
+
+  }
+
+  /*
+    Size and alignment for the OH, OtBu, etc...
+  */
+  .aglycon_button{
+    width: 42%;
+    display: block;
+    background-color:var(--mid-blue) !important;
+    color:white !important;
+  }
+
+  /*
+    Put some space between the checkboxes
+  */
+  .snfg_checkbox{
+    margin-left: 2% !important;
+  }
+
+  .sequence_display_area{
+    width:100%;
+    background-color:white;
+    height: 3em;
+
+    text-align:center;
+    padding: 0.5% 2% 0.5% 2%;
+    margin: 0 auto 1% auto;
+    border-top: 1px solid var(--slate-blue) !important;
+    border-left: 1px solid var(--slate-blue) !important;
+    border-right: 1px solid var(--pale-light-blue) !important;
+    border-bottom: 1px solid var(--pale-light-blue) !important;
+    overflow:auto;
+  }
+
+  #branch_options_box{
+    width:100%;
+    background-color: white;
+    padding:2%;
+    text-align: center;
+    padding: 0.5% 2% 0.5% 2%;
+    margin: 0 auto 1% auto;
+    border-top: 1px solid var(--slate-blue) !important;
+    border-left: 1px solid var(--slate-blue) !important;
+    border-right: 1px solid var(--pale-light-blue) !important;
+    border-bottom: 1px solid var(--pale-light-blue) !important;
+    overflow:auto;
+  }
+
+  #branch_options{
+    margin-top:1%;
+  }
+
+  #symbol_display{
+        display:block;
+        padding: 0%;
+        margin-top:1%;
+    background-color:white;
+    width:100% !important;
+    height: auto;
+
+    resize: both;
+    overflow:auto;
+    text-align:center;
+
+    }
+
+  #help_box{
+    width:100%;
+    box-shadow: 4px 4px 4px var(--shadow-grey);
+    padding:0.5%;
+    margin-top:3%;
+    margin-bottom:3%;
+    background-color: var(--light-green);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  #display_box{
+    padding-bottom:1%;
+  }
+
+  #pdb-help-box{
+    margin: 1% 5% 0 0;
+    border: 1px solid var(--light-green);
+    border-radius: 4px;
+  }
+
+  /*
+    Could be two generic classes
+  */
+  #help_area{
+    resize:none;
+    width:100%;
+  }
+
+  /*
+    This could be a generic class.
+  */
+  #gif_box{
+    width:100%;
+  }
+
+  /*
+    The animated gif's container.
+  */
+  #building_demo{
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+  }
+
+  /*
+    Box with select fields for asigning linkages.
+  */
+  #linkage_box{
+    text-align: center;
+    padding-bottom:2%;
+    margin-top:2%;
+  }
+
+  #node_box{
+    padding-bottom: 2%;
+  }
+
+
+  /*
+    Button for accepting terminal edits.
+  */
+  #finish_terminal{
+    width: 100%;
+
+  }
+
+  /*
+    Container of the position checkboxes.
+  */
+  #positions{
+    background-color:white;
+    border-top: 1px solid var(--slate-blue);
+    border-left: 1px solid var(--slate-blue);
+    border-right: 1px solid var(--pale-light-blue);
+    border-bottom: 1px solid var(--pale-light-blue);
+    margin: 1% 0 1% 0;
+    text-align: center;
+  }
+
+  #rotamer-selection-box{
+    background-color: var(--pale-light-blue);
+    max-height:35vh;
+  }
+
+  #download-selection-box{
+    max-height:25vh;
+  }
+
+  #download-files-headers{
+    display: none;
+  }
+
+  .linkage-table-row:hover{
+    color: var(--mid-blue);
+  }
+
+  .linkage-cell:hover{
+    color:white;
+    background-color: var(--mid-blue);
+  }
+
+  .cb-download-link{
+    padding:2%;
+    color:white;
+  }
+
+
+  #labeled-sequence-box{
+    width:99vw !important;
+    /*white-space: nowrap !important;*/
+  }
+
+  .highlighted-residue{
+    background-color:var(--light-green);
+    color:white;
+    border:1px solid var(--slate-blue);
+    border-radius: 8px;
+  }
+
+
+  .highlighted-linkage{
+    background-color:var(--mid-blue);
+    color:white;
+    border:1px solid var(--slate-blue);
+    border-radius: 8px;
+  }
+
+  .cancelled-highlight{
+    background-color:white;
+    color:black;
+    padding:0%;
+
+  }
+/** new cb */
+  #residue-box{
+    width:100%;
+  }
+
+  .editor-box{
+    width:100%;
+    height:100px;
+  }
+
+  .sequence-editor-box{
+    width:100%;
+    height:150px;
+  }
+  /*
+    --mid-blue-grey: #647594;
+*/
+
+  .txt-blue{
+    color: var(--dark-blue) !important;
+  }
+
+/*
+  End CB rules
+*/
+
+/*
+  GAG related rules
+*/
+
+#builders{
+  width:100% !important;
+}
+
+.builder-btn{
+  width:100% !important;
+  margin-top:0;
+  margin-bottom:0;
+  padding:0;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.gag-residue-btn{
+  margin-right:auto;
+  margin-left:auto;
+  margin-top:2%;
+  width:29vw;
+  padding:1%;
+}
+
+.gag-terminal-btn{
+  width:30%;
+  margin-right:1%;
+}
+
+.gag-editor-btn{
+  width:30%;
+}
+
+.gag-linker-btn{
+  width: 92%;
+}
+
+/*
+  Lib related rules
+*/
+
+
+
+
+.lib-header{
+  font-weight:bolder;
+}
+
+
+.lib-btn{
+  width:30%;
+}
+
+.snfg-img{
+  display: block;
+  max-width:100%;
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+  margin:auto;
+}
+
+.pagination-section{
+  margin-right:auto;
+  margin-left:auto;
+
+  font-size:0.4em;
+  width:94%;
+
+
+}
+.page-link{
+  width:100%;
+  margin:0 !important;
+  padding:0 5% 0 5% !important;
+}
+
+/*
+  GF related rules
+*/
+  /*
+    Replaces the color in the GF results.
+  */
+
+  .img-thumbnail{
+    height:80px !important;
+    width:80px !important;
+  }
+
+  .gf-snfg{
+    max-width:80%;
+    max-height:20vh;
+  }
+
+
+  #point-and-click{
+    font-size:2em !important;
+  }
+
+
+
+  .page-number-link{
+    background-color: var(--mid-blue-grey) !important;
+  }
+  .nav-link.gf-tab{
+    color: white !important;
+  }
+  .nav-link.gf-tab:hover{
+    color: var(--slate-blue)!important;
+  }
+  .litemol-gf{
+    height: 30vh !important;
+  }
+  .li-gf:hover{
+    cursor: pointer;
+  }
+  /*
+    These are technically input fields, not buttons.
+    They allow a user to enter values, and are used for gf filters.
+    Used in templates/gf/result_options.html
+  */
+  .min-max-btn{
+    width: 40% !important;
+    margin-right: 3%;
+    margin-left: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+  /*
+    Groups that contain the .min-max-btn fields.
+    Used in templates/gf/result_options.html
+  */
+  .input-group.pt-1{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 4%;
+    padding-right: 0;
+    padding-left: 10%;
+    text-align: center;
+    border-bottom: 1px solid var(--lightest-grey);
+  }
+
+  /*
+    Column specifications for the GF.
+  */
+  .gf-col{
+    border: solid 1px var(--light-grey);
+    border-radius: 4px;
+  }
+
+
+  /*
+    GF title row alignement and color.
+  */
+  .title-row{
+    border-bottom: 1px solid var(--light-grey);
+  }
+
+  /*
+    Color and margin for the gf result header.
+  */
+  .gf-result-header{
+    background-color: var(--not-quite-white);
+    border: 1px solid var(--light-blue-grey);
+    margin: 0;
+  }
+
+  /*
+    Shows at top and bottom of the gf results page.
+  */
+  .gf-results-nav-header{
+    background-color: var(--lightest-grey);
+  }
+
+  /*
+    The comments/error/warnings tabs.
+  */
+  .gf-detail-tablist{
+    float: right;
+
+  }
+  .errors-tab{
+    background-color: var(--light-red);
+  }
+  .warnings-tab{
+    background-color: var(--orange);
+  }
+  .comments-tab{
+    background-color: var(--light-blue-grey);
+  }
+
+  /*
+    Unsure how these are meant to be floating, needs comment after
+    Dave is finished development.
+  */
+  .panel-link{
+    float: right;
+  }
+
+  /*
+    More/Less button in gf results.
+  */
+  .SeeMore2{
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /*
+    Rule to remove stubborn space at the top.
+  */
+  #glyfinderBlock{
+    margin-top:0 !important;
+  }
+
+  #refine-link{
+    float: none;
+  }
+
+  #glyfinderBlock{
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #result_nav_box{
+    padding-top: 2%;
+    background-color: var(--lightest-grey);
+  }
+
+  #PDB-tab{
+    margin-right: 0.25%;
+  }
+
+  #oligo-tab{
+    border-left: 0.25%;
+  }
+/*
+  End GF rules
+*/
+
+/*
+  Status app rules
+*/
+  /*
+    Border and alignment for the status report table.
+  */
+  .status_report_table
+    {
+        border:2px solid black;
+        width:100%;
+        margin:0% 1% 1% 0%;
+    }
+
+  /*
+    Alignment and color for the header
+  */
+    .status_report_header
+    {
+        border:1px solid black;
+        text-align:center;
+        background-color:GhostWhite;
+        padding:0.5%;
+    }
+
+  /*
+    Colors for apps that are not currently working.
+    Specifically the app name.
+  */
+    .service_report_name_field-down
+    {
+        border-bottom:1px solid lightgrey;
+        border-right:1px solid black;
+        background-color:mistyrose;
+        padding:1%;
+        font-weight:bold;
+    }
+
+  /*
+    Colors for apps that are currently working.
+    Specifically the app name. (column with the label: Service.)
+  */
+    .service_report_name_field-up
+    {
+        border-bottom:1px solid lightgrey;
+        border-right:1px solid black;
+        padding: 1%;
+        font-weight:bold;
+    }
+
+  /*
+    Colors for the column with the label: status
+    Specifically for apps that are not working.
+  */
+    .service_report_field-down
+    {
+        border-bottom:1px solid lightgrey;
+        border-right:1px solid black;
+        background-color:mistyrose;
+        text-align:center;
+
+    }
+
+  /*
+    Colors for the column with the label: status
+    Specifically for apps that are working.
+  */
+    .service_report_field-up
+    {
+        border-bottom:1px solid lightgrey;
+        border-right:1px solid black;
+        text-align:center;
+    }
+
+  #litemol{
+    width: 100%;
+    height:300px;
+    height: 50vh;
+    margin: 2% auto 1% auto;
+    position: relative;
+  }
+
+  #glyco_portal{
+    background-image: url("../img/SingleChainGlycan.jpg") !important;
+    background-repeat:no-repeat;
+    height:110%;
+    margin-left:0%;
+  }
+
+
+
+  .scenario-btn{
+    font-weight:bolder !important;
+    color:white !important;
+    width:90%;
+  }
+
+  .portal_icon{
+    width:90%;
+    margin-right:5%;
+    margin-left:5%;
+
+  }
+
+  .portal-icon-btn{
+    width:60%;
+    border-top: 1px solid var(--not-quite-white);
+    border-left: 1px solid var(--not-quite-white);
+    border-bottom: 2px solid var(--slate-blue);
+    border-right: 2px solid var(--slate-blue);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .portal-icon-btn:hover {
+    background-color: var(--blue-grey);
+
+  }
+
+  #spike-protein-img{
+    width:100%;
+  }
+
+  .error_page_box{
+    max-height:20vh;
+  }
+
+  .error-box{
+    border: 1px solid var(--orange-warn);
+    background-color: var(--orange-warn);
+  }
+
+  .error-msg{
+    color: white;
+    background-color: var(--orange-warn);
+  }
+
+  /*
+    No space inside the element's border
+  */
+  .no-pad{
+    padding:0 !important;
+  }
+
+  .project-header-container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+
+}
+
+/*
+  Responsiveness considerations.
+*/
+@media screen and (min-width: 540px){
+
+  #spike-protein-video{
+    width:20vw;
+    height:20vw;
+  }
+
+  .pill-col{
+    padding:0 3% 0 3% !important;
+  }
+
+  .lib-thumbnail{
+    height:20vw;
+  }
+
+  .lib-thumbnail:hover{
+    height: 22vw;
+  }
+
+  .pagination-section{
+    font-size:1.2em !important;
+
+  }
+
+}
+
+@media screen and (min-width: 576px){
+
+
+
+  .img-thumbnail{
+    height:50px !important;
+    width:50px !important;
+  }
+
+  .button_img{
+    display:inline-flex;
+    vertical-align:middle;
+    width:25%;
+    margin-right:4px;
+  }
+
+  .gag-residue-btn{
+    width: 40%;
+    margin-right:2%;
+  }
+
+
+  .gag-residue-col{
+    height:15vw;
+  }
+
+  .pill-col{
+    padding-right:0% !important;
+  }
+
+  .page-footer{
+    display: block;
+  }
+
+  .lib-btn{
+    width:90%;
+  }
+
+}
+
+
+@media screen and (min-width: 720px){
+  .img-thumbnail{
+    height:70px !important;
+    width:70px !important;
+  }
+
+  .editor_button{
+    width: 12vw;
+    height:6vw;
+  }
+  .glycam-logo{
+    max-height: 30px;
+  }
+
+  .portal-icon-btn{
+    width:70%;
+  }
+
+  #portal-container{
+    width: 100%;
+  }
+
+  .node-box-button{
+
+    width:43%;
+  }
+
+  .pagination-section{
+    width:70%;
+
+  }
+
+  #download-files-headers{
+    display:flex;
+
+  }
+
+}
+
+@media screen and (min-width: 768px){
+
+  .editor_button{
+    width:8vw;
+    height:4vw;
+  }
+
+  .branch_option_button{
+    width: 10vw;
+    height:4vw;
+  }
+
+  .residue_button{
+    width:8.5vw;
+    height:4vw;
+  }
+
+
+  .gag-linker-btn{
+    width:100%;
+  }
+
+/*  #litemol{
+    height:45vw !important;
+    width:40vw !important;
+  }
+*/
+
+  .lib-btn{
+    width:70%;
+  }
+
+  .lib-thumbnail{
+    max-height:20vh;
+  }
+
+  .lib-thumbnail:hover{
+    height: 22vw;
+  }
+
+
+}
+
+
+@media screen and (min-width: 960px){
+
+
+
+  .gag-residue-btn{
+    margin-right:2%;
+    margin-top:2%;
+
+    padding:1%;
+  }
+
+
+
+  .img-thumbnail{
+    height:90px !important;
+    width:90px !important;
+  }
+
+  .lib-thumbnail{
+    height:15vw;
+  }
+
+  .lib-thumbnail:hover{
+    height: 17vw;
+  }
+
+
+  .form-group{
+    padding:1%;
+  }
+
+
+
+  .aglycon_button{
+    width:40%;
+  }
+
+
+
+  .builder-btn{
+    width:15%;
+  }
+
+
+}
+
+/** Navbar collapses here **/
+@media only screen and (min-width:992px){
+
+
+  .sidebar-container{
+    display:block;
+  }
+
+
+  .step{
+    display:inline-block;
+    width:100%;
+    padding:1% 5% 1% 5%;
+    margin:auto;
+  }
+
+
+}
+
+@media only screen and (min-width:1140px){
+
+
+  #spike-protein-video{
+    width:15vw;
+    height:15vw;
+  }
+
+  .residue_button{
+    margin:1px;
+    padding:4px !important;
+    width:8.5vw;
+  }
+
+/*  #litemol{
+    height:35vw !important;
+    width:40vw !important;
+  }*/
+  .img-thumbnail{
+    height:110px !important;
+    width:110px !important;
+  }
+
+
+
+  .builder-btn{
+    width:80% !important;
+  }
+
+  .node-box-button{
+
+    width:45%;
+  }
+
+  #glyco_portal{
+    height:110%;
+    margin-left:-5%;
+  }
+
+
+}
+
+@media only screen and (min-width:1200px){
+
+  .font-6{
+    font-size: 0.72em !important;
+  }
+  .font-7{
+    font-size: 0.84em !important;
+  }
+  .font-8{
+    font-size: 0.96em !important;
+  }
+  .font-9{
+    font-size: 1.08em !important;
+  }
+  .font-std{
+    font-size: 1.2em !important;
+  }
+  .font-11{
+    font-size: 1.32em !important;
+  }
+  .font-12{
+    font-size: 1.44em !important;
+  }
+  .font-13{
+    font-size: 1.56em !important;
+  }
+  .font-14{
+    font-size: 1.68em !important;
+  }
+  .font-15{
+    font-size: 1.8em !important;
+  }
+
+  .node-box-button{
+    width:38%;
+    height:2vw;
+  }
+
+
+}
+
+@media only screen and (min-width:1400px){
+  .branch_option_button{
+    width:8vw;
+    height:3vw;
+  }
+  .editor_button{
+    height:2vw;
+  }
+  .residue_button{
+    height:3vw;
+  }
+
+
+  #spike-protein-video{
+    width:250px;
+    height:250px;
+  }
+
+  .font-size-small{
+    font-size:1em !important;
+  }
+
+/*    #litemol{
+    height:26vw !important;
+    width:40vw !important;
+  }*/
+
+  .cb-download-link{
+    padding:2% !important;
+  }
+
+
+  .lib-btn{
+    width:50%;
+  }
+
+  .img-thumbnail{
+    height:140px !important;
+    width:140px !important;
+  }
+
+
+
+  .sticky-offset-nav{
+    top:67px !important;
+  }
+
+  .glycam-logo{
+    max-height: 40px;
+  }
+
+
+  .portal-icon-btn{
+    width:50%;
+  }
+
+  #spike-protein-img{
+    width:80%;
+  }
+
+  #glyco_portal{
+    background-image: url("../img/ExtendedCocomplex_1920x1200.jpg") !important;
+    background-repeat:no-repeat;
+    height:110%;
+    margin-left:0%;
+  }
+
+
+}
+
+@media only screen and (min-width:1800px){
+
+  .font-6{
+    font-size: 0.9em !important;
+  }
+  .font-7{
+    font-size: 1.05em !important;
+  }
+  .font-8{
+    font-size: 1.2em !important;
+  }
+  .font-9{
+    font-size: 1.35em !important;
+  }
+  .font-std{
+    font-size:1.5em !important;
+  }
+  .font-11{
+    font-size: 1.65em !important;
+  }
+  .font-12{
+    font-size: 1.8em !important;
+  }
+  .font-13{
+    font-size: 1.95em !important;
+  }
+  .font-14{
+    font-size: 2.1em !important;
+  }
+  .font-15{
+    font-size: 2.25em !important;
+  }
+
+  .node-box-button{
+    height:1.5vw;
+  }
+  .lib-thumbnail{
+    height:10vw;
+  }
+
+  .lib-thumbnail:hover{
+    height: 12vw;
+  }
+
+
+
+
+
+}
+
+@media only screen and (min-width:2000px){
+
+  .font-size-small{
+    font-size:1.2em !important;
+  }
+
+  .font-size-std{
+    font-size:1.5em !important;
+  }
+
+
+  .node-box-button{
+    height:1.7vw;
+  }
+
+
+
+  .lib-thumbnail{
+    width:100%;
+    height:8vw !important;
+  }
+
+  .lib-thumbnail:hover{
+    height: 10vw !important;
+  }
+
+
+
+
+  .lib-btn{
+    width:25%;
+  }
+
+
+  .cb-options-btn{
+
+    padding-bottom:0 !important;
+  }
+
+
+  #cake{
+    width:50vw;
+  }
+
+
+  .sticky-offset-nav{
+    top:100px !important;
+  }
+
+  .branch_option_button{
+    width:15%;
+  }
+
+
+  .glycam-logo{
+    max-height: 50px;
+  }
+
+
+}
